@@ -15,8 +15,5 @@ import { CommonModule } from '@angular/common';
         PopoverContentComponent,
         PopoverDirective
     ],
-    entryComponents: [
-        PopoverContentComponent
-    ]
 })
 export class PopoverModule { }

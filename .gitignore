@@ -41,6 +41,8 @@ Thumbs.db
 # Certificates
 *.crt
 
+.angular
+
 /e2e/screenshots/reports/*
 /e2e/screenshots/actual/*
 /e2e/screenshots/diff/*

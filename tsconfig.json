@@ -5,17 +5,17 @@
         "outDir": "./dist/out-tsc",
         "sourceMap": true,
         "declaration": false,
-        "module": "es2015",
+        "module": "es2020",
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "importHelpers": true,
-        "target": "es5",
+        "target": "es2022",
         "typeRoots": [
             "node_modules/@types"
         ],
         "lib": [
-            "es2018",
+            "es2022",
             "dom"
         ],
         "paths": {
@@ -26,5 +26,8 @@
                 "dist/ngx-smart-popover/*"
             ]
         }
-    }
+    },
+    "angularCompilerOptions": {
+        "compilationMode": "full",
+    },
 }
