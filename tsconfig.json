@@ -19,6 +19,9 @@
             "dom"
         ],
         "paths": {
+          "angular-smart-popover": [
+            "dist/angular-smart-popover"
+          ],
             "ngx-smart-popover": [
                 "dist/ngx-smart-popover"
             ],
