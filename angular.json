@@ -62,18 +62,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "ngx-smart-popover-demo:build"
+                      "buildTarget": "ngx-smart-popover-demo:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "ngx-smart-popover-demo:build:production"
+                          "buildTarget": "ngx-smart-popover-demo:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "ngx-smart-popover-demo:build"
+                      "buildTarget": "ngx-smart-popover-demo:build"
                     }
                 },
                 "test": {
