@@ -14,12 +14,15 @@
             "schematics": {},
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
+                    "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                        "outputPath": "docs",
+                        "outputPath": {
+                          "base": "docs"
+                        },
                         "index": "src/index.html",
-                        "main": "src/main.ts",
-                        "polyfills": "src/polyfills.ts",
+                        "polyfills": [
+                          "src/polyfills.ts"
+                        ],
                         "tsConfig": "src/tsconfig.app.json",
                         "assets": [
                             "src/favicon.ico",
@@ -31,7 +34,8 @@
                         ],
                         "scripts": [],
                         "baseHref": "/ngx-smart-popover/",
-                        "deployUrl": "/ngx-smart-popover/"
+                        "deployUrl": "/ngx-smart-popover/",
+                        "browser": "src/main.ts"
                     },
                     "configurations": {
                         "production": {
@@ -47,8 +51,6 @@
                             "namedChunks": false,
                             "aot": true,
                             "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true,
                             "budgets": [
                                 {
                                     "type": "initial",
