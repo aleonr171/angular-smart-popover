@@ -5,7 +5,6 @@
 
 import {
     ChangeDetectorRef,
-    ComponentFactoryResolver,
     ComponentRef,
     Directive,
     EventEmitter,
@@ -18,7 +17,9 @@ import {
     ApplicationRef,
     Injector,
     Type,
-    EmbeddedViewRef
+    EmbeddedViewRef,
+    EnvironmentInjector,
+    createComponent
 } from '@angular/core';
 import { PopoverContentComponent } from './popover-content.component';
 import { PopoverPlacement } from './popover.placement';
@@ -46,9 +47,8 @@ export class PopoverDirective implements OnChanges {
     constructor(
         protected viewContainerRef: ViewContainerRef,
         protected cdr: ChangeDetectorRef,
-        protected resolver: ComponentFactoryResolver,
         protected appRef: ApplicationRef,
-        private injector: Injector
+        private injector: EnvironmentInjector
     ) { }
 
     // -------------------------------------------------------------------------
@@ -131,22 +131,16 @@ export class PopoverDirective implements OnChanges {
     }
 
     protected createComponent(component: Type<any>): ComponentRef<any> {
-        const factory = this.resolver.resolveComponentFactory(component);
+        
 
         // Create a component reference from the component
-        const componentRef = this.appendToBody
-            ? factory.create(this.injector)
-            : this.viewContainerRef.createComponent(factory);
+        const componentRef = createComponent(component, {
+            environmentInjector: this.injector,
+        });
 
         if (this.appendToBody) {
-            // Attach component to the appRef so that it's inside the ng component tree
             this.appRef.attachView(componentRef.hostView);
-
-            // Get DOM element from component
-            const domElem = (componentRef.hostView as EmbeddedViewRef<any>)
-                .rootNodes[0] as HTMLElement;
-
-            // Append DOM element to the body
+            const domElem = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
             document.body.appendChild(domElem);
         }
 
