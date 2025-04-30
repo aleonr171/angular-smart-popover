@@ -1,6 +1,6 @@
 {
     "name": "angular-smart-popover",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/aleonr171/angular-smart-popover.git"
@@ -32,8 +32,8 @@
     },
     "homepage": "https://github.com/aleonr171/angular-smart-popover#readme",
     "peerDependencies": {
-        "@angular/common": "^18.0.0",
-        "@angular/core": "^18.0.0",
+        "@angular/common": "^19.0.0",
+        "@angular/core": "^19.0.0",
         "bootstrap": "^4.0.0"
     }
 }
