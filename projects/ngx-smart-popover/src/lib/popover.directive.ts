@@ -15,7 +15,6 @@ import {
     SimpleChange,
     ViewContainerRef,
     ApplicationRef,
-    Injector,
     Type,
     EmbeddedViewRef,
     EnvironmentInjector,
@@ -31,7 +30,8 @@ import { PopoverPlacement } from './popover.placement';
 */
 @Directive({
     selector: '[popover]',
-    exportAs: 'popover'
+    exportAs: 'popover',
+    standalone: false,
 })
 export class PopoverDirective implements OnChanges {
     // -------------------------------------------------------------------------

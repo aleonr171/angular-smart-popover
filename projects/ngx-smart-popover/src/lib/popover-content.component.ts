@@ -20,6 +20,7 @@ import { PopoverPlacement } from './popover.placement';
 
 @Component({
     selector: 'popover-content',
+    standalone: false,
     template: `
         <div #popoverDiv
             class="bs-popover-{{ effectivePlacement }} popover-content popover {{ parentClass }}"
