@@ -31,7 +31,6 @@ import { PopoverPlacement } from './popover.placement';
 @Directive({
     selector: '[popover]',
     exportAs: 'popover',
-    standalone: false,
 })
 export class PopoverDirective implements OnChanges {
     // -------------------------------------------------------------------------

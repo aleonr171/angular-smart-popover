@@ -17,10 +17,10 @@ import {
 } from '@angular/core';
 import { PopoverDirective } from './popover.directive';
 import { PopoverPlacement } from './popover.placement';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'popover-content',
-    standalone: false,
     template: `
         <div #popoverDiv
             class="bs-popover-{{ effectivePlacement }} popover-content popover {{ parentClass }}"
@@ -46,7 +46,8 @@ import { PopoverPlacement } from './popover.placement';
                     {{ content }}
                 </div>
         </div>
-    `
+    `,
+    imports: [NgClass]
 })
 export class PopoverContentComponent implements AfterViewInit, OnDestroy {
     // -------------------------------------------------------------------------

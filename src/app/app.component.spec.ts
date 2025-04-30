@@ -6,12 +6,9 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [
-                AppComponent,
-                PopoverContentComponent,
-                PopoverDirective
-            ],
-        }).compileComponents();
+    imports: [PopoverContentComponent,
+        PopoverDirective, AppComponent],
+}).compileComponents();
     }));
 
     it('should create the app', () => {
